@@ -25,8 +25,8 @@ class CreatePengeluarankasTable extends Migration
                 $table->string('ref', 50);
                 $table->timestamps();
 
-                $table->foreign('pembelian_id')->references('pembelian_id')->on('pembelians');
-                $table->foreign('supplaier_id')->references('supplaier_id')->on('supplaiers');
+                $table->foreign('pembelian_id')->references('pembelian_id')->on('pembelians')->onDelete('cascade')->onUpdate('cascade');
+                $table->foreign('supplaier_id')->references('supplaier_id')->on('supplaiers')->onDelete('cascade')->onUpdate('cascade');
 
             });
 

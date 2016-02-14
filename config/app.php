@@ -158,7 +158,6 @@ return [
         App\Providers\RouteServiceProvider::class,
         Acacha\AdminLTETemplateLaravel\Providers\AdminLTETemplateServiceProvider::class,
         Creativeorange\Gravatar\GravatarServiceProvider::class,
-        Appzcoder\CrudGenerator\CrudGeneratorServiceProvider::class,
         Barryvdh\DomPDF\ServiceProvider::class,
         Maatwebsite\Excel\ExcelServiceProvider::class,
 

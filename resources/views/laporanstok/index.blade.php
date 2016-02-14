@@ -4,7 +4,7 @@
 <!-- Content Header (Page header) -->
 <section class="content-header">
     <h1>
-        @yield('contentheader_title', 'Data Laporan Stok')
+        @yield('contentheader_title', 'Data Laporan Stok Barang')
         <small>@yield('contentheader_description')</small>
     </h1>
     <ol class="breadcrumb">
@@ -22,7 +22,7 @@
                 </div><!-- /.box-header -->
                 <div class="box-body">
 
-            {!! Form::open() !!}
+            {!! Form::open(['url'=>'laporanstok/search', 'method'=>'get']) !!}
 
             <div class="form-group {{ $errors->has('dari') ? 'has-error' : ''}}">
                 {!! Form::label('dari', 'Tanggal Start: ', ['class' => 'col-sm-3 control-label']) !!}

@@ -23,7 +23,7 @@ class CreateJurnalumumsTable extends Migration
                 $table->string('ref', 50);
 
                 $table->timestamps();
-                $table->foreign('akun_id')->references('akun_id')->on('akuns');
+                $table->foreign('akun_id')->references('akun_id')->on('akuns')->onDelete('cascade')->onUpdate('cascade');
 
             });
 

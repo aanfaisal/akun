@@ -4,7 +4,7 @@
 <!-- Content Header (Page header) -->
 <section class="content-header">
     <h1>
-        @yield('contentheader_title', 'Data Laporan Penjualan')
+        @yield('contentheader_title', 'Data Laporan Penjualan Barang')
         <small>@yield('contentheader_description')</small>
     </h1>
     <ol class="breadcrumb">
@@ -18,27 +18,27 @@
             <div class="col-xs-12">
               <div class="box">
                 <div class="box-header">
-                  <h3 class="box-title">Laporan Penjualan</h3>
+                  <h3 class="box-title">Laporan Penjualan Barang</h3>
                 </div><!-- /.box-header -->
                 <div class="box-body">
 
-            {!! Form::open() !!}
+            {!! Form::open(['url'=>'laporanpenjualan/search', 'method'=>'get']) !!}
 
-            <div class="form-group {{ $errors->has('tgl_laporanpenjualanstart') ? 'has-error' : ''}}">
-                {!! Form::label('tgl_laporanpenjualanstart', 'Tanggal Start: ', ['class' => 'col-sm-3 control-label']) !!}
+            <div class="form-group {{ $errors->has('dari') ? 'has-error' : ''}}">
+                {!! Form::label('dari', 'Tanggal Start: ', ['class' => 'col-sm-3 control-label']) !!}
                 <div class="col-sm-6">
-                    {!! Form::date('tgl_laporanpenjualanstart', null, ['class' => 'form-control', 'required' => 'required']) !!}
-                    {!! $errors->first('tgl_jurnal', '<p class="help-block">:message</p>') !!}
+                    {!! Form::date('dari', null, ['class' => 'form-control', 'required' => 'required']) !!}
+                    {!! $errors->first('dari', '<p class="help-block">:message</p>') !!}
                 </div>
             </div>
             <br>
             <center><h3>Sampai</h3></center>
             <br>
-            <div class="form-group {{ $errors->has('tgl_penjualanover') ? 'has-error' : ''}}">
-                {!! Form::label('tgl_penjualanover', 'Tanggal End: ', ['class' => 'col-sm-3 control-label']) !!}
+            <div class="form-group {{ $errors->has('sampai') ? 'has-error' : ''}}">
+                {!! Form::label('sampai', 'Tanggal End: ', ['class' => 'col-sm-3 control-label']) !!}
                 <div class="col-sm-6">
-                    {!! Form::date('tgl_penjualanover', null, ['class' => 'form-control', 'required' => 'required']) !!}
-                    {!! $errors->first('tgl_penjualanover', '<p class="help-block">:message</p>') !!}
+                    {!! Form::date('sampai', null, ['class' => 'form-control', 'required' => 'required']) !!}
+                    {!! $errors->first('sampai', '<p class="help-block">:message</p>') !!}
                 </div>
             </div>
             <br>
@@ -59,7 +59,7 @@
                 @endif
                 </div>
                 </div>
-                </div>
+            </div>
         </div>
 </section>
 @endsection

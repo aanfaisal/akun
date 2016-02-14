@@ -23,8 +23,8 @@ class CreatePenerimaankasTable extends Migration
                 $table->string('ref');
                 $table->timestamps();
 
-                $table->foreign('penjualan_id')->references('penjualan_id')->on('penjualans');
-                $table->foreign('nonota_id')->references('nonota_id')->on('nonota');
+                $table->foreign('penjualan_id')->references('penjualan_id')->on('penjualans')->onDelete('cascade')->onUpdate('cascade');
+                $table->foreign('nonota_id')->references('nonota_id')->on('nonota')->onDelete('cascade')->onUpdate('cascade');
             });
 
     }

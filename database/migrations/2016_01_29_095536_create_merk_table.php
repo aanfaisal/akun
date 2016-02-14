@@ -20,7 +20,7 @@ class CreateMerkTable extends Migration
                 $table->string('status', 30);
                 $table->timestamps();
 
-            $table->foreign('kategori_id')->references('kategori_id')->on('kategori');
+            $table->foreign('kategori_id')->references('kategori_id')->on('kategori')->onDelete('cascade')->onUpdate('cascade');
             });
 
     }

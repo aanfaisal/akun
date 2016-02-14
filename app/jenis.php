@@ -22,4 +22,8 @@ class jenis extends Model
     {
         return $this->belongsTo('App\kategori');
     }
+    public function kartustok()
+    {
+        return $this->hasMany('App\kartustok');
+    }
 }

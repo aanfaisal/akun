@@ -35,7 +35,7 @@ class kartustokController extends Controller
     {
         $barang = DB::table('barangs')->lists('nama', 'barang_id');
         $jenis = DB::table('jenis')->lists('nama_jenis', 'jenis_id');
-        return view('kartustok.create')->with('nama', $barang)
+        return view('kartustok.create')->with('barang', $barang)
                                     ->with('jenis', $jenis);
     }
 
@@ -46,7 +46,7 @@ class kartustokController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, [ 'tgl' => 'required', 'jenis' => 'required', 'transaksi_id' => 'required', 'stokawal' => 'required', 'masuk' => 'required', 'keluar' => 'required', 'stokakhir' => 'required', 'sisa' => 'required', 'harga' => 'required', 'hargabeli' => 'required', 'laba' => 'required', ]);
+        $this->validate($request, ['barang_id' => 'required', 'jenis_id' => 'required', 'stokawal' => 'required', 'masuk' => 'required', 'keluar' => 'required', 'stokakhir' => 'required', 'sisa' => 'required', 'harga' => 'required', 'hargabeli' => 'required', 'laba' => 'required', ]);
 
         kartustok::create($request->all());
 
@@ -81,8 +81,7 @@ class kartustokController extends Controller
         $kartustok = kartustok::findOrFail($kartustok_id);
         $barang = DB::table('barangs')->lists('nama', 'barang_id');
         $jenis = DB::table('jenis')->lists('nama_jenis', 'jenis_id');
-        return view('kartustok.edit', compact('kartustok'))
-                                    ->with('nama', $barang)
+        return view('kartustok.edit', compact('kartustok'))->with('barang', $barang)
                                     ->with('jenis', $jenis);
     }
 
@@ -95,7 +94,7 @@ class kartustokController extends Controller
      */
     public function update($kartustok_id, Request $request)
     {
-        $this->validate($request, ['tgl' => 'required', 'jenis' => 'required', 'transaksi_id' => 'required', 'stokawal' => 'required', 'masuk' => 'required', 'keluar' => 'required', 'stokakhir' => 'required', 'sisa' => 'required', 'harga' => 'required', 'hargabeli' => 'required', 'laba' => 'required', ]);
+        $this->validate($request, ['barang_id' => 'required', 'jenis_id' => 'required', 'stokawal' => 'required', 'masuk' => 'required', 'keluar' => 'required', 'stokakhir' => 'required', 'sisa' => 'required', 'harga' => 'required', 'hargabeli' => 'required', 'laba' => 'required', ]);
 
         $kartustok = kartustok::findOrFail($kartustok_id);
         $kartustok->update($request->all());
