@@ -40,11 +40,8 @@ Route::group(['middleware' => ['web']], function () {
 	Route::resource('penerimaankas', 'penerimaankas\\penerimaankasController');
 	Route::resource('nonota', 'nonota\\nonotaController');
 	Route::resource('user', 'user\\userController');
-	Route::get('laporanpenjualan', 'laporanpenjualan\\laporanpenjualanController@index');
-	Route::get('laporanpenjualan/search', 'laporanpenjualan\\laporanpenjualanController@search');
+	Route::resource('laporanpenjualan', 'laporanpenjualan\\laporanpenjualanController');
+	Route::post('laporanstok', 'laporanstok\\laporanstokController@store');
 	Route::get('laporanstok', 'laporanstok\\laporanstokController@index');
-	Route::get('laporanstok/search', 'laporanstok\laporanstokController@search');
-	//Route::resource('laporanstok', 'laporanstok\laporanstokController');
-	Route::get('laporanpembelian', 'laporanpembelian\\laporanpembelianController@index');
-	Route::get('laporanpembelian/search', 'laporanpembelian\\laporanpembelian@search');
+	Route::resource('laporanpembelian', 'laporanpembelian\\laporanpembelianController');
 });

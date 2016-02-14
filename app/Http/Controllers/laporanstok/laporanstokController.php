@@ -24,15 +24,6 @@ class laporanstokController extends Controller
         return view('laporanstok.index');
     }
 
-    public function search(Request $request)
-    {
-        $from = Carbon::parse($request->input('dari'))->format('Y-m-d'); // asumsi input tanggal menggunakan format d-m-Y
-        $to = Carbon::parse($request->input('sampai'))->format('Y-m-d'); // asumsi input tanggal menggunakan format d-m-Y
-        $laporanstoks = \App\laporanstok::whereBetween('created_at', [$from, $to])->get();
-
-        return view('laporanstok.search-list', array('laporanstoks'=>$laporanstoks));
-
-    }
     public function create()
     {
         return view('laporanstok.create');
@@ -44,9 +35,25 @@ class laporanstokController extends Controller
      */
     public function store(Request $request)
     {
+        $dari=date('Y-m-d',strtotime($request->input('dari')));
+        $sampai=date('Y-m-d',strtotime($request->input('sampai')));
+        $laporanstok = \App\laporanstok::whereBetween('created_at', array($dari, $sampai))->get();
+        return redirect('laporanstok.store');
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $laporanstok_id
+     *
+     * @return Response
+     */
+    public function show($dari, $sampai)
+    {
+        //$laporanstok = laporanstok::findOrFail($laporanstok_id);
         //$dari=date('Y-m-d',strtotime($request->input('dari')));
         //$sampai=date('Y-m-d',strtotime($request->input('sampai')));
         //$laporanstok = \App\laporanstok::whereBetween('created_at', array($dari, $sampai))->get();
-        return redirect('laporanstok');//store/show/apa');
+        return view('laporanstok.show', compact(''));
     }
 }

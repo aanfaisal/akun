@@ -36,7 +36,7 @@ class barang extends Model
     }
     public function kartustok()
     {
-        return $this->hasMany('App\kartustok');
+        return $this->hasOne('App\kartustok');
     }
     public function satuan()
     {

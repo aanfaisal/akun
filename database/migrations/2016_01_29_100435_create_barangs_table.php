@@ -27,10 +27,10 @@ class CreateBarangsTable extends Migration
                 $table->string('minstok');
                 $table->timestamps();
 
-            $table->foreign('kategori_id')->references('kategori_id')->on('kategori')->onDelete('cascade')->onUpdate('cascade');
-            $table->foreign('jenis_id')->references('jenis_id')->on('jenis')->onDelete('cascade')->onUpdate('cascade');
-            $table->foreign('merk_id')->references('merk_id')->on('merk')->onDelete('cascade')->onUpdate('cascade');
-            $table->foreign('satuan_id')->references('satuan_id')->on('satuan')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('kategori_id')->references('kategori_id')->on('kategori');
+            $table->foreign('jenis_id')->references('jenis_id')->on('jenis');
+            $table->foreign('merk_id')->references('merk_id')->on('merk');
+            $table->foreign('satuan_id')->references('satuan_id')->on('satuan');
 
             });
 

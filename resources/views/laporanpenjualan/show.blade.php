@@ -5,12 +5,12 @@
 <!-- Content Header (Page header) -->
 <section class="content-header">
     <h1>
-        @yield('contentheader_title', 'Lihat Data Kartu Stok')
+        @yield('contentheader_title', 'Lihat Data Jurnal Penjualan')
         <small>@yield('contentheader_description')</small>
     </h1>
     <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i>Kartu Stok</a></li>
-        <li class="active">Lihat Kartu Stok</li>
+        <li><a href="#"><i class="fa fa-dashboard"></i>Jurnal Penjualan</a></li>
+        <li class="active">Lihat Jurnal Penjualan</li>
     </ol>
 </section>
 <section class="content">
@@ -18,22 +18,22 @@
             <div class="col-xs-12">
               <div class="box">
                 <div class="box-header">
-                  <h3 class="box-title">Kartu Stok</h3>
+                  <h3 class="box-title">Jurnal Penjualan</h3>
                 </div><!-- /.box-header -->
                 <div class="box-body">
         <hr/>
 
-                <h1>Kartustok</h1>
+                <h1>Jurnal Penjualan</h1>
                 <div class="table-responsive">
                     <table class="table table-bordered table-striped table-hover">
                         <thead>
                             <tr>
-                                <th>No. </th> <th>ID Barang</th><th>Tanggal</th><th>Jenis</th>
+                                <th>No. </th> <th>ID Penjualan </th><th>No.nota </th><th>Tanggal Jurnal</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>{{ $kartustok->kartustok_id }}</td> <td> {{ $kartustok->barang_id }} </td><td> {{ $kartustok->tgl }} </td><td> {{ $kartustok->jenis }} </td>
+                                <td>{{ $jurnalpenjualan->jurnalpenjualan_id }}</td> <td> {{ $jurnalpenjualan->penjualan_id }} </td><td> {{ $jurnalpenjualan->nonota_id }} </td><td> {{ $jurnalpenjualan->tgl_jurnal }} </td>
                             </tr>
                         </tbody>
                     </table>

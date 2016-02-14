@@ -23,8 +23,8 @@ class CreatePenjualansTable extends Migration
                 $table->string('total', 20);
                 $table->timestamps();
 
-                $table->foreign('nonota_id')->references('nonota_id')->on('nonota')->onDelete('cascade')->onUpdate('cascade');//->onDelete('cascade');
-                $table->foreign('barang_id')->references('barang_id')->on('barangs')->onDelete('cascade')->onUpdate('cascade');
+                $table->foreign('nonota_id')->references('nonota_id')->on('nonota');//->onDelete('cascade');
+                $table->foreign('barang_id')->references('barang_id')->on('barangs');
             });
 
     }

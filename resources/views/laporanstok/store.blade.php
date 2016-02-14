@@ -33,7 +33,11 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>{{ $kartustok->kartustok_id }}</td> <td> {{ $kartustok->barang_id }} </td><td> {{ $kartustok->tgl }} </td><td> {{ $kartustok->jenis }} </td>
+                                <td>{{ $kartustok->kartustok_id }}</td>
+                                <td> {{ $kartustok->barang_id }} </td>
+                                <td> {{ $kartustok->tgl }} </td>
+                                <td> {{ $kartustok->jenis }} </td>
+
                             </tr>
                         </tbody>
                     </table>

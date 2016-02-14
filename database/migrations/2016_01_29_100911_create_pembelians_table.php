@@ -26,8 +26,8 @@ class CreatePembeliansTable extends Migration
                 $table->string('statusutang', 30);
                 $table->timestamps();
 
-                $table->foreign('supplaier_id')->references('supplaier_id')->on('supplaiers')->onDelete('cascade')->onUpdate('cascade');
-                $table->foreign('barang_id')->references('barang_id')->on('barangs')->onDelete('cascade')->onUpdate('cascade');
+                $table->foreign('supplaier_id')->references('supplaier_id')->on('supplaiers');
+                $table->foreign('barang_id')->references('barang_id')->on('barangs');
 
             });
 

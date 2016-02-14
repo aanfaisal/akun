@@ -4,7 +4,7 @@
 <!-- Content Header (Page header) -->
 <section class="content-header">
     <h1>
-        @yield('contentheader_title', 'Data Laporan Pembelian Barang')
+        @yield('contentheader_title', 'Data Laporan pembelian')
         <small>@yield('contentheader_description')</small>
     </h1>
     <ol class="breadcrumb">
@@ -22,23 +22,24 @@
                 </div><!-- /.box-header -->
                 <div class="box-body">
 
-            {!! Form::open(['url'=>'laporanpembelian/search', 'method'=>'get']) !!}
+            {!! Form::open() !!}
 
-            <div class="form-group {{ $errors->has('dari') ? 'has-error' : ''}}">
-                {!! Form::label('dari', 'Tanggal Start: ', ['class' => 'col-sm-3 control-label']) !!}
+
+            <div class="form-group {{ $errors->has('tgl_pembelianstart') ? 'has-error' : ''}}">
+                {!! Form::label('tgl_pembelianstart', 'Tanggal Start: ', ['class' => 'col-sm-3 control-label']) !!}
                 <div class="col-sm-6">
-                    {!! Form::date('dari', null, ['class' => 'form-control', 'required' => 'required']) !!}
-                    {!! $errors->first('dari', '<p class="help-block">:message</p>') !!}
+                    {!! Form::date('tgl_pembelianstart', null, ['class' => 'form-control', 'required' => 'required']) !!}
+                    {!! $errors->first('tgl_jurnal', '<p class="help-block">:message</p>') !!}
                 </div>
             </div>
             <br>
             <center><h3>Sampai</h3></center>
             <br>
-            <div class="form-group {{ $errors->has('sampai') ? 'has-error' : ''}}">
-                {!! Form::label('sampai', 'Tanggal End: ', ['class' => 'col-sm-3 control-label']) !!}
+            <div class="form-group {{ $errors->has('tgl_pembelianover') ? 'has-error' : ''}}">
+                {!! Form::label('tgl_pembelianover', 'Tanggal End: ', ['class' => 'col-sm-3 control-label']) !!}
                 <div class="col-sm-6">
-                    {!! Form::date('sampai', null, ['class' => 'form-control', 'required' => 'required']) !!}
-                    {!! $errors->first('sampai', '<p class="help-block">:message</p>') !!}
+                    {!! Form::date('tgl_pembelianover', null, ['class' => 'form-control', 'required' => 'required']) !!}
+                    {!! $errors->first('tgl_pembelianover', '<p class="help-block">:message</p>') !!}
                 </div>
             </div>
             <br>
@@ -59,7 +60,7 @@
                 @endif
                 </div>
                 </div>
-            </div>
+                </div>
         </div>
 </section>
 @endsection

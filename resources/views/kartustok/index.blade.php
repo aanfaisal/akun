@@ -4,11 +4,11 @@
 <!-- Content Header (Page header) -->
 <section class="content-header">
     <h1>
-        @yield('contentheader_title', 'Data Kartustok')
+        @yield('contentheader_title', 'Data Kartu Stok')
         <small>@yield('contentheader_description')</small>
     </h1>
     <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i>kartustok</a></li>
+        <li><a href="#"><i class="fa fa-dashboard"></i>Kartu Stok</a></li>
         <li class="active">Here</li>
     </ol>
 </section>
@@ -18,17 +18,17 @@
             <div class="col-xs-12">
               <div class="box">
                 <div class="box-header">
-                  <h3 class="box-title">Kartustok</h3>
+                  <h3 class="box-title">Kartu Stok</h3>
                 </div><!-- /.box-header -->
                 <div class="box-body">
         <hr/>
 
-                <h1>Kartustok <a href="{{ url('kartustok/create') }}" class="btn btn-primary pull-right btn-sm">Tambah Data Kartustok</a></h1>
+                <h1>Kartustok <a href="{{ url('kartustok/create') }}" class="btn btn-primary pull-right btn-sm">Tambah Data Kartu Stok</a></h1>
                 <div class="table">
                     <table class="table table-bordered table-striped table-hover">
                         <thead>
                             <tr>
-                                <th>No</th><th>Barang Id</th><th>Tgl</th><th>Jenis Id</th><th>Actions</th>
+                                <th>No</th><th>Nama Barang</th><th>Tanggal</th><th>Jenis</th><th>Actions</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -37,9 +37,10 @@
                             {{-- */$x++;/* --}}
                             <tr>
                                 <td>{{ $x }}</td>
-                                <td><a href="{{ url('kartustok', $item->kartustok_id) }}">{{ $item->barang->nama }}</a></td>
+                                <td><a href="{{ url('kartustok', $item->kartustok_id) }}">
+                                {{ $item->barangs->nama }}</a></td>
                                 <td>{{ $item->tgl }}</td>
-                                <td>{{ $item->jenis->nama_jenis }}</td>
+                                <td>{{ $item->jenis }}</td>
                                 <td>
                                     <a href="{{ url('kartustok/' . $item->kartustok_id . '/edit') }}">
                                         <button type="submit" class="btn btn-primary btn-xs">Update</button>

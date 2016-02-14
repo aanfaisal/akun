@@ -39,8 +39,4 @@ class penjualan extends Model
     {
         return $this->hasMany('App\penerimaanka');
     }
-    public function kartustok()
-    {
-        return $this->hasMany('App\kartustk');
-    }
 }
